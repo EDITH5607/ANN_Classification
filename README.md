@@ -1,121 +1,163 @@
-# 🧠 ANN Classification: Customer Churn Prediction  
+# 🧠 ANN Classification: Customer Churn Prediction
 
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red?style=for-the-badge)
 ![Keras](https://img.shields.io/badge/Model-Keras-blue?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Language-Python-yellow?style=for-the-badge)
 
-A complete end-to-end **Artificial Neural Network (ANN)** pipeline for **Customer Churn Prediction**, deployed via **Streamlit** for real-time interactive classification.  
+A complete end-to-end **Artificial Neural Network (ANN)** pipeline for **Customer Churn Prediction**, deployed via **Streamlit** for real-time interactive classification.
 
-🔗 **Live Demo**: [ANN Classification App](https://annclassification-bqmnohnfqgbkn4scgdw6hf.streamlit.app/)  
-
----
-
-## 📌 Project Motivation  
-
-Customer churn is one of the most critical challenges faced by businesses. Identifying which customers are likely to leave helps in:  
-- Reducing revenue loss 💸  
-- Improving customer satisfaction 🤝  
-- Building targeted retention strategies 🎯  
-
-This project builds and deploys an **ANN-based classifier** to predict churn probability given user/customer details.  
+🔗 **Live Demo**: [ANN Classification App](https://annclassification-bqmnohnfqgbkn4scgdw6hf.streamlit.app/)
 
 ---
 
-## 📊 Dataset  
+## 📌 Project Motivation
 
-- **Source**: `Churn_Modelling.csv`  
-- **Rows**: 10,000 customers  
-- **Features**: 14 (including categorical & numerical)  
-- **Target**: `Exited` (1 = Churned, 0 = Retained)  
+Customer churn is one of the most critical challenges faced by businesses. Identifying which customers are likely to leave helps in:
 
-### Features Used  
-- `CreditScore`  
-- `Geography`  
-- `Gender`  
-- `Age`  
-- `Tenure`  
-- `Balance`  
-- `NumOfProducts`  
-- `HasCrCard`  
-- `IsActiveMember`  
-- `EstimatedSalary`  
+- Reducing revenue loss 💸
+- Improving customer satisfaction 🤝
+- Building targeted retention strategies 🎯
+
+This project builds and deploys an **ANN-based classifier** to predict churn probability given customer details.
 
 ---
 
-## 🧠 ANN Model  
+## 📊 Dataset
 
-The ANN was built using **TensorFlow/Keras**.  
+- **Source**: `Churn_Modelling.csv`
+- **Rows**: 10,000 customers
+- **Features**: 14 (categorical + numerical)
+- **Target**: `Exited` (1 = Churned, 0 = Retained)
 
-### Architecture  
-- **Input Layer**: Encoded & scaled customer features  
-- **Hidden Layer 1**: Dense (units=6), activation = `relu`  
-- **Hidden Layer 2**: Dense (units=6), activation = `relu`  
-- **Output Layer**: Dense (units=1), activation = `sigmoid`  
+### Features Used
 
-### Training Details  
-- **Loss**: Binary Crossentropy  
-- **Optimizer**: Adam  
-- **Metrics**: Accuracy  
-- **Epochs**: 100  
-- **Batch Size**: 32  
-
----
-
-## 📈 Model Performance  
-
-- **Training Accuracy**: ~86%  
-- **Test Accuracy**: ~85%  
-- **Confusion Matrix**: Balanced results between churned & non-churned customers  
-
-*(You can insert charts from your `experiments.ipynb` here as images for more clarity.)*  
+- `CreditScore`
+- `Geography`
+- `Gender`
+- `Age`
+- `Tenure`
+- `Balance`
+- `NumOfProducts`
+- `HasCrCard`
+- `IsActiveMember`
+- `EstimatedSalary`
 
 ---
 
-## 🎛️ Preprocessing  
+## 🧠 ANN Model
 
-- **Categorical Encoding**  
-  - `Geography` → OneHotEncoded  
-  - `Gender` → LabelEncoded  
-- **Feature Scaling**  
-  - StandardScaler for numerical features  
+The ANN was built using **TensorFlow/Keras**.
 
-Pickle files (`.pkl`) store the fitted encoders & scalers for consistent preprocessing in deployment.  
+### Architecture
 
----
+- **Input Layer**: Encoded & scaled customer features
+- **Hidden Layer 1**: Dense (units=6), activation = `relu`
+- **Hidden Layer 2**: Dense (units=6), activation = `relu`
+- **Output Layer**: Dense (units=1), activation = `sigmoid`
 
-## 🚀 Deployment  
+### Training Details
 
-- **Framework**: Streamlit  
-- **Files**:  
-  - `app.py` → Frontend interface  
-  - `model.h5` → Trained ANN model  
-  - `*.pkl` → Preprocessing artefacts  
-- **Platform**: Streamlit Cloud  
-
-### Hosted App  
-🔗 [Click Here to Try](https://annclassification-bqmnohnfqgbkn4scgdw6hf.streamlit.app/)  
-
-*(If the link is inactive, redeploy via [Streamlit Cloud](https://streamlit.io/cloud))*  
+- **Loss**: Binary Crossentropy
+- **Optimizer**: Adam
+- **Metrics**: Accuracy
+- **Epochs**: 100
+- **Batch Size**: 32
 
 ---
 
-## 📷 App Preview  
+## 📈 Model Performance
 
-### Input Form  
-![form](docs/form_example.png)  
+- **Training Accuracy**: \~86%
+- **Test Accuracy**: \~85%
+- **Confusion Matrix**: Balanced results between churned & non-churned customers
 
-### Prediction Result  
-![result](docs/result_example.png)  
-
-*(Add your own screenshots inside a `/docs` folder and link them here.)*  
+_(Insert confusion matrix/ROC curve plots here if available — taken from `experiments.ipynb`.)_
 
 ---
 
-## 🛠️ Installation & Usage  
+## 🎛️ Preprocessing
 
-### 1️⃣ Clone the Repo  
+- **Categorical Encoding**
+
+  - `Geography` → OneHotEncoded (`geo_onehot_encoder.pkl`)
+  - `Gender` → LabelEncoded (`label_encoder_gender.pkl`)
+
+- **Feature Scaling**
+
+  - StandardScaler for numerical features (`standard_scaler.pkl`)
+
+Pickle files ensure consistent preprocessing in deployment.
+
+---
+
+## 🚀 Deployment
+
+- **Framework**: Streamlit
+- **Files**:
+
+  - `app.py` → Frontend interface
+  - `model.h5` → Trained ANN model
+  - `*.pkl` → Preprocessing artefacts
+
+- **Platform**: Streamlit Cloud
+
+### Hosted App
+
+🔗 [Click Here to Try](https://annclassification-bqmnohnfqgbkn4scgdw6hf.streamlit.app/)
+
+---
+
+## 🛠️ Installation & Usage
+
+### 1️⃣ Clone the Repo
+
 ```bash
 git clone https://github.com/EDITH5607/ANN_Classification.git
 cd ANN_Classification
+```
+
+### 2️⃣ Install Requirements
+
+```bash
 pip install -r requirements.txt
+```
+
+### 3️⃣ Run Locally
+
+```bash
 streamlit run app.py
+```
+
+App will run at **[http://localhost:8501/](http://localhost:8501/)**
+
+---
+
+## 📂 Repository Structure
+
+```text
+ANN_Classification/
+│── app.py                      # Streamlit App
+│── Churn_Modelling.csv         # Dataset
+│── model.h5                    # Trained ANN model
+│── geo_onehot_encoder.pkl      # One-hot encoder for Geography
+│── label_encoder_gender.pkl    # Gender encoder
+│── standard_scaler.pkl         # Feature scaler
+│── requirements.txt            # Dependencies
+│── experiments.ipynb           # Training & experimentation
+│── prediction.ipynb            # Batch predictions
+└── README.md                   # Project documentation
+```
+
+---
+
+## 📬 Contact
+
+- Author: **[EDITH5607](https://github.com/EDITH5607)**
+- Live App: [Streamlit Demo](https://annclassification-bqmnohnfqgbkn4scgdw6hf.streamlit.app/)
+- Issues: Use [GitHub Issues](https://github.com/EDITH5607/ANN_Classification/issues)
+
+---
+
+⭐ If you find this repo helpful, don’t forget to **star it**! ⭐
+
+---
