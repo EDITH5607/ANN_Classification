@@ -158,6 +158,6 @@ ANN_Classification/
 
 ---
 
-⭐ If you find this repo helpful, don’t forget to **star it**! ⭐
+✨⭐ If you find this repo helpful, don’t forget to **star it**! ⭐✨
 
 ---
